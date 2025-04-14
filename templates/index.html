@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Fetcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch Business Links from stadsgids.nl</h1>
+    <form action="/fetch" method="post">
+        <button type="submit">Fetch and Store URLs</button>
+    </form>
+    <div class="message">
+        <p>Click the button to fetch all URLs from the sitemap and scrape business links from each page.</p>
+        <p>This may take some time. You'll be redirected to the results page when complete.</p>
+    </div>
+</body>
+</html>

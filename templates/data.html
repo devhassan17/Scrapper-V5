@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Links Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            position: sticky;
+            top: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .count {
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Business Links from stadsgids.nl</h1>
+    <div class="count">Total Business Links Found: {{ business_links|length }}</div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Source Page</th>
+                <th>Business Name</th>
+                <th>Business URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for link in business_links %}
+            <tr>
+                <td><a href="{{ link[0] }}" target="_blank">{{ link[0] }}</a></td>
+                <td>{{ link[1] }}</td>
+                <td><a href="{{ link[2] }}" target="_blank">{{ link[2] }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
